@@ -1,0 +1,42 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Program9
+{
+    internal class Program
+    {
+        static void Main()
+        {
+            // Целевая точка раскопок (координаты «клада»)
+            int targetX = 5;
+            int targetY = 3;
+
+            Console.Write("Введите координату X раскопок: ");
+            string inputX = Console.ReadLine();
+
+            Console.Write("Введите координату Y раскопок: ");
+            string inputY = Console.ReadLine();
+
+            // Проверка, что введены корректные целые числа
+            if (int.TryParse(inputX, out int playerX) && int.TryParse(inputY, out int playerY))
+            {
+                // Сравнение координат
+                if (playerX == targetX && playerY == targetY)
+                {
+                    Console.WriteLine("Победа! Вы нашли место раскопок!");
+                }
+                else
+                {
+                    Console.WriteLine($"К сожалению, вы не попали в точку ({targetX}, {targetY}). Попробуйте ещё раз.");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Ошибка: пожалуйста, введите корректные целые числа для координат.");
+            }
+        }
+    }
+}
